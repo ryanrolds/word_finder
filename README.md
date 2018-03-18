@@ -30,4 +30,4 @@ Requires Python 2.7 (probably works on 3.x too).
 
 ## Design
 
-The program first loads the list of english words and builds a tree. That tree is then traversed (depth-first). Any matching words are outputted to a list, which is returned when when traveral is completed.
+The program first loads the list of english words and builds a tree. That tree is then traversed (depth-first). Any matching words are outputted to a list, which is returned when when traversal is completed.
