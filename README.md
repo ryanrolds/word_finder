@@ -1,25 +1,33 @@
 # Word Finder
 
-Take a word, including wildcard spaces, outputs a list of words that satisfy the input.
+Super simple program demonstrating trees and recursion. Takes a word with underscores for whildcards and outputs a list of words that satisfy the wildcards.
 
-# English words
+## English words
 
 List of words copied from https://github.com/dwyl/english-words.
 
-# Setup
+## Setup
 
-Requires Python 2.7 (probably works on 3.x).
+Requires Python 2.7 (probably works on 3.x too).
 
-# Running
-
-    $ python find_words.py
-
-## Example
+## Running
 
     $ python find_words.py
-    $ > Query: wh_t
-    $ > Result: 
 
-# Design
+### Example
+
+    $ python find_words.py
+    What is your query? (underscores are wild)
+    wh_t
+    Found:
+    * what
+    * whet
+    * whit
+    What is your query? (underscores are wild)
+
+    ** Recived empty query **
+    Exiting...
+
+## Design
 
 The program first loads the list of english words and builds a tree. That tree is then traversed (depth-first). Any matching words are outputted to a list, which is returned when when traveral is completed.
