@@ -23,7 +23,7 @@ class Node:
         nextNode.addWord(word, index + 1)
 
     # Performs the tree traveral and adds found words to an array
-    def query(self, query, index, found):
+    def query(self, query, known, index, found):
         if index >= len(query):
             if self.leaf != None:
                 found.append(self.leaf)
@@ -33,10 +33,11 @@ class Node:
 
         if letter == '_': 
             for letter in self.letters:
-                self.letters[letter].query(query, index + 1, found)
+                if letter not in known:
+                    self.letters[letter].query(query, known, index + 1, found)
 
         if letter in self.letters:
-            self.letters[letter].query(query, index + 1, found)
+            self.letters[letter].query(query, known, index + 1, found)
 
 # A little redundant, only here to hide the nodes
 # from the main part of the program. Made some refactoring easier
@@ -46,7 +47,7 @@ class WordTree:
     def add(self, word):
         self.root.addWord(word, 0)
 
-    def query(self, query):
+    def query(self, query, known):
         found = []
-        self.root.query(query, 0, found)
+        self.root.query(query, known, 0, found)
         return found

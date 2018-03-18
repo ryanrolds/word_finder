@@ -1,6 +1,6 @@
 # Word Finder
 
-Super simple program demonstrating trees and recursion. Takes a word with underscores for whildcards and outputs a list of words that satisfy the wildcards.
+Super simple program demonstrating trees and recursion. Takes known letters and a word with underscores for whildcards and outputs a list of words that satisfy the wildcards without using the known letters.
 
 ## English words
 
@@ -17,12 +17,22 @@ Requires Python 2.7 (probably works on 3.x too).
 ### Example
 
     $ python find_words.py
+    What are your known letter? (e.g. "rstlne")
+    a
+    What is your query? (underscores are wild)
+    wh_t
+    Found:
+    * whet
+    * whit
+    What are your known letter? (e.g. "rstlne")
+    e
     What is your query? (underscores are wild)
     wh_t
     Found:
     * what
-    * whet
     * whit
+    What are your known letter? (e.g. "rstlne")
+
     What is your query? (underscores are wild)
 
     ** Recived empty query **

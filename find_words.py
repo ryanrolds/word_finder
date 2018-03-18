@@ -3,7 +3,7 @@
 import sys
 from word_tree import WordTree
 
-wordTree = WordTree();
+wordTree = WordTree()
 count = 0
 
 with open('./words_en/words.txt') as words:
@@ -12,7 +12,7 @@ with open('./words_en/words.txt') as words:
         word = line.lower().rstrip('\n\r')
 
         # The meat and potatos
-        wordTree.add(word);
+        wordTree.add(word)
 
         # Count the number of words/lines we've processed
         count += 1
@@ -30,17 +30,20 @@ with open('./words_en/words.txt') as words:
 print('Loaded %d words' % (count))
 
 while True:
+    print('What are your known letter? (e.g. "rstlne")')
+    known = sys.stdin.readline().rstrip('\n\r')
+
     print('What is your query? (underscores are wild)')
     # Gets typed in query the terminal/stdin
-    query = sys.stdin.readline().rstrip('\n\r');
+    query = sys.stdin.readline().rstrip('\n\r')
 
     # Provide way to cleanly exit program (avoiding Ctrl+C)
     if len(query) == 0:
         print('** Recived empty query **')
-        break;
+        break
 
     # Perform the query and get the matches
-    found = wordTree.query(query);
+    found = wordTree.query(query, known)
 
     if len(found) == 0:
         print('** Sorry, no matches **')
