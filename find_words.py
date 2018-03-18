@@ -9,10 +9,10 @@ count = 0
 with open('./words_en/words.txt') as words:
     for line in words:
         # Lower case the line, make this thing case insensitive 
-        line = line.lower().rstrip('\n\r')
+        word = line.lower().rstrip('\n\r')
 
         # The meat and potatos
-        wordTree.add(line);
+        wordTree.add(word);
 
         # Count the number of words/lines we've processed
         count += 1
