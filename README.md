@@ -2,6 +2,8 @@
 
 Super simple program demonstrating trees and recursion. Takes known letters and a word with underscores for whildcards and outputs a list of words that satisfy the wildcards without using the known letters.
 
+> This is PoC for a local high school teacher and his CS class.
+
 ## English words
 
 List of words copied from https://github.com/dwyl/english-words.
